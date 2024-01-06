@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		2DFD05D22B493FCF00704ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05D12B493FCF00704ABB /* AppDelegate.swift */; };
 		2DFD05D42B493FCF00704ABB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05D32B493FCF00704ABB /* SceneDelegate.swift */; };
-		2DFD05D62B493FCF00704ABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05D52B493FCF00704ABB /* ViewController.swift */; };
-		2DFD05D92B493FCF00704ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFD05D72B493FCF00704ABB /* Main.storyboard */; };
+		2DFD05D62B493FCF00704ABB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05D52B493FCF00704ABB /* GameViewController.swift */; };
 		2DFD05DC2B493FCF00704ABB /* SuggestTheNumber.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05DA2B493FCF00704ABB /* SuggestTheNumber.xcdatamodeld */; };
 		2DFD05DE2B493FD000704ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DFD05DD2B493FD000704ABB /* Assets.xcassets */; };
 		2DFD05E12B493FD000704ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFD05DF2B493FD000704ABB /* LaunchScreen.storyboard */; };
@@ -20,8 +19,7 @@
 		2DFD05CE2B493FCF00704ABB /* SuggestTheNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuggestTheNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFD05D12B493FCF00704ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DFD05D32B493FCF00704ABB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2DFD05D52B493FCF00704ABB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2DFD05D82B493FCF00704ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2DFD05D52B493FCF00704ABB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2DFD05DB2B493FCF00704ABB /* SuggestTheNumber.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuggestTheNumber.xcdatamodel; sourceTree = "<group>"; };
 		2DFD05DD2B493FD000704ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DFD05E02B493FD000704ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,8 +58,7 @@
 			children = (
 				2DFD05D12B493FCF00704ABB /* AppDelegate.swift */,
 				2DFD05D32B493FCF00704ABB /* SceneDelegate.swift */,
-				2DFD05D52B493FCF00704ABB /* ViewController.swift */,
-				2DFD05D72B493FCF00704ABB /* Main.storyboard */,
+				2DFD05D52B493FCF00704ABB /* GameViewController.swift */,
 				2DFD05DD2B493FD000704ABB /* Assets.xcassets */,
 				2DFD05DF2B493FD000704ABB /* LaunchScreen.storyboard */,
 				2DFD05E22B493FD000704ABB /* Info.plist */,
@@ -130,7 +127,6 @@
 			files = (
 				2DFD05E12B493FD000704ABB /* LaunchScreen.storyboard in Resources */,
 				2DFD05DE2B493FD000704ABB /* Assets.xcassets in Resources */,
-				2DFD05D92B493FCF00704ABB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DFD05D62B493FCF00704ABB /* ViewController.swift in Sources */,
+				2DFD05D62B493FCF00704ABB /* GameViewController.swift in Sources */,
 				2DFD05DC2B493FCF00704ABB /* SuggestTheNumber.xcdatamodeld in Sources */,
 				2DFD05D22B493FCF00704ABB /* AppDelegate.swift in Sources */,
 				2DFD05D42B493FCF00704ABB /* SceneDelegate.swift in Sources */,
@@ -151,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2DFD05D72B493FCF00704ABB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2DFD05D82B493FCF00704ABB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2DFD05DF2B493FD000704ABB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -301,7 +289,6 @@
 				INFOPLIST_FILE = SuggestTheNumber/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -329,7 +316,6 @@
 				INFOPLIST_FILE = SuggestTheNumber/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
