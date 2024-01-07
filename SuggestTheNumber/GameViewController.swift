@@ -114,16 +114,28 @@ final class GameViewController: UIViewController {
         globalView.layer.borderColor = UIColor.purple.cgColor
         
         
-        scoreStackView.backgroundColor = .clear
-        scoreStackView.axis = .horizontal
-        scoreStackView.distribution = .fillEqually
-        
-        
         infoLabel.backgroundColor = .clear
         infoLabel.textAlignment = .center
         infoLabel.font = UIFont.systemFont(ofSize: 41, weight: .bold)
         infoLabel.textColor = .green
         infoLabel.text = "YOU WIN!"
+        
+        
+        scoreStackView.backgroundColor = .clear
+        scoreStackView.axis = .horizontal
+        scoreStackView.distribution = .fillEqually
+        
+        
+        currentScoreLabel.textAlignment = .left
+        currentScoreLabel.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
+        currentScoreLabel.textColor = .black
+        currentScoreLabel.text = "Score: 7"
+        
+        
+        theBestScoreLabel.textAlignment = .right
+        theBestScoreLabel.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
+        theBestScoreLabel.textColor = .black
+        theBestScoreLabel.text = "Record: 5"
         
         
         inputContainerView.backgroundColor = .clear
