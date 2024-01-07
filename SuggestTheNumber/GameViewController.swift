@@ -6,17 +6,30 @@ final class GameViewController: UIViewController {
     
 //MARK: - Properties of class
     
-    let globalView = UIView()
+    //MARK: - Creating of UI
     
-    let infoLabel = UILabel()
+    private let globalView = UIView()
+    
+    private let infoLabel = UILabel()
 
-    let inputContainerView = UIView()
-    let inputTextField = UITextField()
-    let inputButton = UIButton()
+    private let inputContainerView = UIView()
+    private let inputTextField = UITextField()
+    private let inputButton = UIButton()
+    private let resetButton = UIButton()
     
-    let scoreStackView = UIStackView()
-    let currentScoreLabel = UILabel()
-    let theBestScoreLabel = UILabel()
+    private let scoreStackView = UIStackView()
+    private let currentScoreLabel = UILabel()
+    private let theBestScoreLabel = UILabel()
+    
+    private let maskView = UIView()
+    
+    //MARK: - Supporting
+
+    private var number = Int.random(in: 1...10)
+    private var currentScore = 0
+    private var recordScore = 999
+    
+    
     
 
     
@@ -49,9 +62,10 @@ final class GameViewController: UIViewController {
         
         globalView.addSubviews(with: inputContainerView, scoreStackView, infoLabel)
         
-        inputContainerView.addSubviews(with: inputTextField, inputButton)
+        inputContainerView.addSubviews(with: inputTextField, inputButton, resetButton)
         scoreStackView.addArrangedSubview(currentScoreLabel)
         scoreStackView.addArrangedSubview(theBestScoreLabel)
+        inputButton.addSubview(maskView)
     }
 
     
@@ -97,9 +111,24 @@ final class GameViewController: UIViewController {
 
         inputButton.translatesAutoresizingMaskIntoConstraints = false
         inputButton.bottomAnchor.constraint(equalTo: inputContainerView.bottomAnchor, constant: -10).isActive = true
-        inputButton.centerXAnchor.constraint(equalTo: inputContainerView.centerXAnchor).isActive = true
+        inputButton.trailingAnchor.constraint(equalTo: inputContainerView.trailingAnchor).isActive = true
         inputButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        inputButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        inputButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        
+        resetButton.translatesAutoresizingMaskIntoConstraints = false
+        resetButton.bottomAnchor.constraint(equalTo: inputContainerView.bottomAnchor, constant: -10).isActive = true
+        resetButton.leadingAnchor.constraint(equalTo: inputContainerView.leadingAnchor).isActive = true
+        resetButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        resetButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        
+        maskView.translatesAutoresizingMaskIntoConstraints = false
+        maskView.topAnchor.constraint(equalTo: inputButton.topAnchor).isActive = true
+        maskView.leadingAnchor.constraint(equalTo: inputButton.leadingAnchor).isActive = true
+        maskView.trailingAnchor.constraint(equalTo: inputButton.trailingAnchor).isActive = true
+        maskView.bottomAnchor.constraint(equalTo: inputButton.bottomAnchor).isActive = true
+        maskView.isHidden = true
     }
 
     
@@ -117,8 +146,6 @@ final class GameViewController: UIViewController {
         infoLabel.backgroundColor = .clear
         infoLabel.textAlignment = .center
         infoLabel.font = UIFont.systemFont(ofSize: 41, weight: .bold)
-        infoLabel.textColor = .green
-        infoLabel.text = "YOU WIN!"
         
         
         scoreStackView.backgroundColor = .clear
@@ -129,13 +156,13 @@ final class GameViewController: UIViewController {
         currentScoreLabel.textAlignment = .left
         currentScoreLabel.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
         currentScoreLabel.textColor = .black
-        currentScoreLabel.text = "Score: 7"
+        currentScoreLabel.text = "Score: \(currentScore)"
         
         
         theBestScoreLabel.textAlignment = .right
         theBestScoreLabel.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
         theBestScoreLabel.textColor = .black
-        theBestScoreLabel.text = "Record: 5"
+        theBestScoreLabel.text = "Record: \(recordScore)"
         
         
         inputContainerView.backgroundColor = .clear
@@ -156,8 +183,63 @@ final class GameViewController: UIViewController {
         inputButton.layer.cornerRadius = 5
         inputButton.layer.borderWidth = 2
         inputButton.layer.borderColor = UIColor.black.cgColor
+        inputButton.addTarget(self, action: #selector(inputTapped), for: .touchUpInside)
         
-
+        
+        resetButton.backgroundColor = .blue
+        resetButton.setTitle("Reset", for: .normal)
+        resetButton.setTitleColor(.red, for: .normal)
+        resetButton.layer.cornerRadius = 5
+        resetButton.layer.borderWidth = 2
+        resetButton.layer.borderColor = UIColor.black.cgColor
+        resetButton.addTarget(self, action: #selector(resetTapped), for: .touchUpInside)
+        
+        
+        maskView.backgroundColor = .clear
+    }
+    
+    
+    
+//MARK: - Actions
+    
+    @objc private func inputTapped() {
+        
+        guard let userNumberStr = inputTextField.text, !userNumberStr.isEmpty else {return}
+        guard let userNumber = Int(userNumberStr) else {return}
+        
+        currentScore = currentScore + 1
+        currentScoreLabel.text = "Score: \(currentScore)"
+        
+        if userNumber == self.number {
+            infoLabel.alpha = 1
+            infoLabel.textColor = .green
+            infoLabel.text = "YOU WIN!"
+            if currentScore <= recordScore {
+                recordScore = currentScore
+                theBestScoreLabel.text = "Record: \(recordScore)"
+            }
+            maskView.isHidden = false
+            currentScore = 0
+        } else {
+            infoLabel.alpha = 1
+            infoLabel.textColor = .red
+            infoLabel.text = "TRY AGAIN!"
+            UIView.animate(withDuration: 2) {
+                self.infoLabel.alpha = 0
+            }
+        }
+        inputTextField.text = ""
+    }
+    
+    
+    @objc private func resetTapped() {
+        
+        maskView.isHidden = true
+        self.number = Int.random(in: 1...10)
+        currentScore = 0
+        currentScoreLabel.text = "Score: \(currentScore)"
+        inputTextField.text = ""
+        infoLabel.text = ""
     }
     
     
