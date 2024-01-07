@@ -13,6 +13,7 @@
 		2DFD05DC2B493FCF00704ABB /* SuggestTheNumber.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05DA2B493FCF00704ABB /* SuggestTheNumber.xcdatamodeld */; };
 		2DFD05DE2B493FD000704ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DFD05DD2B493FD000704ABB /* Assets.xcassets */; };
 		2DFD05E12B493FD000704ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFD05DF2B493FD000704ABB /* LaunchScreen.storyboard */; };
+		2DFD05EA2B4AACD000704ABB /* Extention + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05E92B4AACD000704ABB /* Extention + UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2DFD05DD2B493FD000704ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DFD05E02B493FD000704ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DFD05E22B493FD000704ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DFD05E92B4AACD000704ABB /* Extention + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention + UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,24 @@
 		2DFD05D02B493FCF00704ABB /* SuggestTheNumber */ = {
 			isa = PBXGroup;
 			children = (
-				2DFD05D12B493FCF00704ABB /* AppDelegate.swift */,
-				2DFD05D32B493FCF00704ABB /* SceneDelegate.swift */,
 				2DFD05D52B493FCF00704ABB /* GameViewController.swift */,
-				2DFD05DD2B493FD000704ABB /* Assets.xcassets */,
-				2DFD05DF2B493FD000704ABB /* LaunchScreen.storyboard */,
+				2DFD05E82B49437D00704ABB /* Support */,
+				2DFD05E92B4AACD000704ABB /* Extention + UIView.swift */,
 				2DFD05E22B493FD000704ABB /* Info.plist */,
 				2DFD05DA2B493FCF00704ABB /* SuggestTheNumber.xcdatamodeld */,
 			);
 			path = SuggestTheNumber;
+			sourceTree = "<group>";
+		};
+		2DFD05E82B49437D00704ABB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2DFD05D12B493FCF00704ABB /* AppDelegate.swift */,
+				2DFD05D32B493FCF00704ABB /* SceneDelegate.swift */,
+				2DFD05DD2B493FD000704ABB /* Assets.xcassets */,
+				2DFD05DF2B493FD000704ABB /* LaunchScreen.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 				2DFD05D62B493FCF00704ABB /* GameViewController.swift in Sources */,
 				2DFD05DC2B493FCF00704ABB /* SuggestTheNumber.xcdatamodeld in Sources */,
 				2DFD05D22B493FCF00704ABB /* AppDelegate.swift in Sources */,
+				2DFD05EA2B4AACD000704ABB /* Extention + UIView.swift in Sources */,
 				2DFD05D42B493FCF00704ABB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
