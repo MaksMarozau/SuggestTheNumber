@@ -6,8 +6,8 @@ final class StartGameViewController: UIViewController {
 
 //MARK: - Properties of class
     
-    let newGameButton = UIButton()
-    let continueGameButton = UIButton()
+    private let newGameButton = UIButton()
+    private let continueGameButton = UIButton()
     
     
 //MARK: - Lifecycle
@@ -86,5 +86,4 @@ final class StartGameViewController: UIViewController {
         let controller = GameViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
-
 }

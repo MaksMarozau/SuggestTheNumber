@@ -65,8 +65,8 @@
 				2DFD05EB2B4ACC5B00704ABB /* UserDefaultManager.swift */,
 				2DFD05ED2B4AD6B800704ABB /* StartGameViewController.swift */,
 				2DFD05D52B493FCF00704ABB /* GameViewController.swift */,
+				2DFD05EF2B4ADF4600704ABB /* Extention */,
 				2DFD05E82B49437D00704ABB /* Support */,
-				2DFD05E92B4AACD000704ABB /* Extention + UIView.swift */,
 				2DFD05E22B493FD000704ABB /* Info.plist */,
 				2DFD05DA2B493FCF00704ABB /* SuggestTheNumber.xcdatamodeld */,
 			);
@@ -82,6 +82,14 @@
 				2DFD05DF2B493FD000704ABB /* LaunchScreen.storyboard */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		2DFD05EF2B4ADF4600704ABB /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				2DFD05E92B4AACD000704ABB /* Extention + UIView.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
