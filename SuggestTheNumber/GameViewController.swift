@@ -19,7 +19,7 @@ final class GameViewController: UIViewController {
     
     private let scoreStackView = UIStackView()
     private let currentScoreLabel = UILabel()
-    private let theBestScoreLabel = UILabel()
+    private let recordScoreLabel = UILabel()
     
     private let maskView = UIView()
     
@@ -40,9 +40,13 @@ final class GameViewController: UIViewController {
         
         view.backgroundColor = .backgroundVC
         
+        currentScore = UserDefaultManager.instance.loadData(key: UserDefaultManager.Keys.currentScore)
+        recordScore = UserDefaultManager.instance.loadData(key: UserDefaultManager.Keys.recordScore)
+        
         addSubviews()
         setConstraintes()
         configUI()
+        
     }
     
     
@@ -64,7 +68,7 @@ final class GameViewController: UIViewController {
         
         inputContainerView.addSubviews(with: inputTextField, inputButton, resetButton)
         scoreStackView.addArrangedSubview(currentScoreLabel)
-        scoreStackView.addArrangedSubview(theBestScoreLabel)
+        scoreStackView.addArrangedSubview(recordScoreLabel)
         inputButton.addSubview(maskView)
     }
 
@@ -159,10 +163,10 @@ final class GameViewController: UIViewController {
         currentScoreLabel.text = "Score: \(currentScore)"
         
         
-        theBestScoreLabel.textAlignment = .right
-        theBestScoreLabel.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
-        theBestScoreLabel.textColor = .black
-        theBestScoreLabel.text = "Record: \(recordScore)"
+        recordScoreLabel.textAlignment = .right
+        recordScoreLabel.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
+        recordScoreLabel.textColor = .black
+        recordScoreLabel.text = "Record: \(recordScore)"
         
         
         inputContainerView.backgroundColor = .clear
@@ -216,7 +220,9 @@ final class GameViewController: UIViewController {
             infoLabel.text = "YOU WIN!"
             if currentScore <= recordScore {
                 recordScore = currentScore
-                theBestScoreLabel.text = "Record: \(recordScore)"
+                recordScoreLabel.text = "Record: \(recordScore)"
+
+                UserDefaultManager.instance.saveData(data: recordScore, key: UserDefaultManager.Keys.recordScore)
             }
             maskView.isHidden = false
             currentScore = 0
@@ -229,6 +235,7 @@ final class GameViewController: UIViewController {
             }
         }
         inputTextField.text = ""
+        UserDefaultManager.instance.saveData(data: currentScore, key: UserDefaultManager.Keys.currentScore)
     }
     
     
@@ -240,6 +247,7 @@ final class GameViewController: UIViewController {
         currentScoreLabel.text = "Score: \(currentScore)"
         inputTextField.text = ""
         infoLabel.text = ""
+        UserDefaultManager.instance.deleteData(key: UserDefaultManager.Keys.currentScore)
     }
     
     
