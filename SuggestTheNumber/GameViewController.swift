@@ -28,25 +28,28 @@ final class GameViewController: UIViewController {
     private var number = Int.random(in: 1...10)
     private var currentScore = 0
     private var recordScore = 999
-    
-    
-    
+  
 
     
-//MARK: - Lifecycle
+//MARK: - Lifecycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .backgroundVC
         
-        currentScore = UserDefaultManager.instance.loadData(key: UserDefaultManager.Keys.currentScore)
-        recordScore = UserDefaultManager.instance.loadData(key: UserDefaultManager.Keys.recordScore)
+        loadDates()
         
         addSubviews()
         setConstraintes()
         configUI()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -54,6 +57,22 @@ final class GameViewController: UIViewController {
         super.viewWillAppear(animated)
         
         startMessage()
+    }
+  
+    
+    
+//MARK: - Load dates
+    
+    private func loadDates() {
+        
+        currentScore = UserDefaultManager.instance.loadData(key: UserDefaultManager.Keys.currentScore)
+        
+        let loadedRecordScoreData = UserDefaultManager.instance.loadData(key: UserDefaultManager.Keys.recordScore)
+        if loadedRecordScoreData > 0 {
+            recordScore = loadedRecordScoreData
+        } else {
+            recordScore = 999
+        }
     }
     
     

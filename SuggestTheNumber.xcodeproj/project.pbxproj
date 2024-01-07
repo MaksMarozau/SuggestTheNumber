@@ -15,6 +15,7 @@
 		2DFD05E12B493FD000704ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFD05DF2B493FD000704ABB /* LaunchScreen.storyboard */; };
 		2DFD05EA2B4AACD000704ABB /* Extention + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05E92B4AACD000704ABB /* Extention + UIView.swift */; };
 		2DFD05EC2B4ACC5B00704ABB /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05EB2B4ACC5B00704ABB /* UserDefaultManager.swift */; };
+		2DFD05EE2B4AD6B800704ABB /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD05ED2B4AD6B800704ABB /* StartGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2DFD05E22B493FD000704ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DFD05E92B4AACD000704ABB /* Extention + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention + UIView.swift"; sourceTree = "<group>"; };
 		2DFD05EB2B4ACC5B00704ABB /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		2DFD05ED2B4AD6B800704ABB /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				2DFD05EB2B4ACC5B00704ABB /* UserDefaultManager.swift */,
+				2DFD05ED2B4AD6B800704ABB /* StartGameViewController.swift */,
 				2DFD05D52B493FCF00704ABB /* GameViewController.swift */,
 				2DFD05E82B49437D00704ABB /* Support */,
 				2DFD05E92B4AACD000704ABB /* Extention + UIView.swift */,
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFD05EE2B4AD6B800704ABB /* StartGameViewController.swift in Sources */,
 				2DFD05EC2B4ACC5B00704ABB /* UserDefaultManager.swift in Sources */,
 				2DFD05D62B493FCF00704ABB /* GameViewController.swift in Sources */,
 				2DFD05DC2B493FCF00704ABB /* SuggestTheNumber.xcdatamodeld in Sources */,
